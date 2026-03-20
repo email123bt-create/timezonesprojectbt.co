@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Birth of Time Zones: A Digital Artifact</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: Lato, Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+    background: #f5f0e8;
+    color: #111;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  header {
+    background-color: #2c1a0e;
+    color: #f0dfc0;
+    padding: 48px 24px 36px;
+    margin-bottom: 0;
+    text-align: center;
+    border-bottom: 4px solid #c8a040;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    line-height: 1.15;
+    color: #f0dfc0;
+  }
+
+  header h1 em {
+    display: block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #c8a040;
+    margin-top: 10px;
+  }
+
+  .byline { font-size: 0.78rem; color: #a09070; margin-top: 14px; letter-spacing: 1px; }
+  .header-rule, .masthead { display: contents; }
+
+  nav {
+    background: #6b2200;
+    padding: 6px 0;
+    margin-bottom: 10px;
+  }
+
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; padding: 0; margin: 0; }
+  nav a { color: #fff; text-decoration: none; padding: 6px 14px; display: block; font-size: 0.82rem; }
+  nav a:hover { text-decoration: underline; }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.55rem;
+    color: #2c1a0e;
+    border-bottom: 2px solid #c8a040;
+    padding-bottom: 5px;
+    margin: 36px 0 12px;
+  }
+
+  h3 { font-size: 1.05rem; color: #6b2200; margin: 20px 0 6px; }
+
+  p { margin: 0 0 14px; }
+
+  section { padding: 10px 0 20px; border-bottom: 1px solid #ddd; }
+  section:last-child { border-bottom: none; }
+
+  .section-label { font-size: 0.7rem; text-transform: uppercase; color: #888; display: block; margin-bottom: 4px; letter-spacing: 1px; }
+
+  blockquote {
+    border-left: 3px solid #6b2200;
+    margin: 18px 0;
+    padding: 10px 16px;
+    background: #f9f3e8;
+    font-style: italic;
+  }
+
+  blockquote p { margin-bottom: 4px; }
+  blockquote cite { font-size: 0.75rem; color: #666; font-style: normal; }
+
+  .callout {
+    background: #f9f3e8;
+    border: 1px solid #d4a96a;
+    border-left: 4px solid #6b2200;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+
+  .callout-label { font-size: 0.68rem; text-transform: uppercase; color: #6b2200; display: block; margin-bottom: 6px; font-weight: bold; }
+
+  figure { margin: 18px 0; }
+  figure img { width: 100%; display: block; border: 1px solid #ccc; }
+  figcaption { font-size: 0.73rem; color: #555; padding: 5px 0; font-style: italic; }
+
+  .img-float { float: right; width: 36%; margin: 0 0 12px 16px; }
+  .img-float img { width: 100%; border: 1px solid #ccc; display: block; }
+  .img-float figcaption { font-size: 0.68rem; color: #555; font-style: italic; }
+  .clearfix::after { content: ""; display: table; clear: both; }
+
+  .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+  .img-pair figure { margin: 0; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+
+  .newspaper {
+    background: #fffdf5;
+    border: 1px solid #ccc;
+    padding: 14px 18px;
+    margin: 18px 0;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  .newspaper::before {
+    content: attr(data-source);
+    font-size: 0.62rem;
+    color: #888;
+    text-transform: uppercase;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    font-style: normal;
+  }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 18px 0; }
+
+  .stat-card {
+    background: #3b1a0e;
+    color: #fff;
+    padding: 14px 10px;
+    text-align: center;
+  }
+
+  .stat-num { font-size: 1.8rem; font-weight: bold; color: #d4a96a; display: block; }
+  .stat-label { font-size: 0.65rem; color: #bbb; line-height: 1.4; }
+
+  .timeline { margin: 20px 0; }
+  .timeline-line { display: none; }
+  .timeline-item { display: flex; gap: 14px; margin-bottom: 18px; border-left: 3px solid #d4a96a; padding-left: 12px; }
+  .timeline-year { font-size: 0.85rem; font-weight: bold; color: #6b2200; min-width: 70px; padding-top: 2px; }
+  .timeline-dot { display: none; }
+  .timeline-content strong { font-size: 0.9rem; display: block; margin-bottom: 2px; }
+  .timeline-content p { font-size: 0.83rem; color: #444; margin: 0; }
+
+  .zone-map { width: 100%; max-width: 640px; margin: 18px auto; display: block; }
+
+  .ornament { text-align: center; color: #d4a96a; margin: 16px 0; }
+
+  .sources { font-size: 0.82rem; padding-left: 18px; }
+  .sources li { margin-bottom: 8px; line-height: 1.5; }
+  .sources a { color: #6b2200; }
+
+  footer {
+    background: #3b1a0e;
+    color: #bbb;
+    text-align: center;
+    padding: 18px;
+    font-size: 0.75rem;
+    margin-top: 30px;
+  }
+
+  footer strong { color: #d4a96a; }
+
+  @media (max-width: 580px) {
+    .two-col, .img-pair { grid-template-columns: 1fr; }
+    .img-float { float: none; width: 100%; margin: 0 0 12px 0; }
+    header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>The Birth of Time Zones<em>How the Railroad Remade American Time, 1870–1883</em></h1>
+    <p class="byline">A Digital Artifact &nbsp;·&nbsp; History 147 &nbsp;·&nbsp; 19th Century American History</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#chaos">Local Time</a></li>
+    <li><a href="#railroads">Railroads</a></li>
+    <li><a href="#solution">The Plan</a></li>
+    <li><a href="#two-noons">Day of Two Noons</a></li>
+    <li><a href="#reaction">Public Reaction</a></li>
+    <li><a href="#legacy">Legacy</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <span class="section-label">Introduction</span>
+    <h2>Before the Clock Was King</h2>
+
+    <figure>
+      <img src="railroaddepot.jpg" alt="Railroad Depot, Iowa, c. 1903" style="width:100%;display:block;">
+    </figure>
+
+    <p>Most people today don't think twice about what time it is. You check your phone and it matches every clock around you. But that wasn't always how things worked. Before the 1880s, every town in America kept its own time based on the sun. A city thirty miles east had a different "noon" than the city next to it. That might sound strange, but it made total sense back then, because nobody needed to coordinate with people that far away.</p>
+
+    <p>That changed when railroads started crossing the continent. Suddenly you had trains running through dozens of towns, all with different clocks, and nobody could agree on a schedule. This is the story of how that problem got solved, and who actually solved it. The answer is not who most people would guess.</p>
+
+    <div class="callout">
+      <span class="callout-label">Key Argument</span>
+      <p>Most people assume the government created standard time zones. They didn't. Private railroad companies did, in 1883, because they had no other choice. Congress didn't make it official for another 35 years.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 1 -->
+  <section id="chaos">
+    <span class="section-label">Part One</span>
+    <h2>A Nation of a Thousand Noons</h2>
+
+    <p>Before railroads, every American town kept what's called <em>local mean solar time</em>. Basically, noon happened when the sun was directly overhead. That's it. Since the Earth rotates 360 degrees every 24 hours, every degree of longitude you move east or west changes the time by four minutes. So cities that weren't even that far apart had completely different clocks.</p>
+
+    <p>To put that in real numbers: at noon in Chicago, it was already 12:07 in Indianapolis, but only 11:50 in St. Louis, and 11:27 in Omaha. None of those cities were wrong. They were all just tracking their own sun. When people traveled by horse or boat this wasn't a big deal, since you moved slowly enough to adjust. Trains changed that completely.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><span class="stat-num">144+</span><span class="stat-label">Local times in North America before 1883</span></div>
+      <div class="stat-card"><span class="stat-num">68+</span><span class="stat-label">Different time standards used by U.S. railroads by the early 1880s</span></div>
+      <div class="stat-card"><span class="stat-num">20</span><span class="stat-label">Time zones crossed on a trip from Boston to the West Coast</span></div>
+      <div class="stat-card"><span class="stat-num">4 min</span><span class="stat-label">Shift in solar time per degree of longitude</span></div>
+    </div>
+
+    <p>A train could get you from New York to Chicago in under two days. You weren't slowly drifting through time zones anymore, you were cutting through them at full speed. And when you arrived at a station, the clock on the wall might say something completely different than the one you left behind. That was a real problem.</p>
+
+    <figure>
+      <img src="trainstationclock.jpg" alt="Train Station Clock, 19th century" style="width:100%;display:block;">
+    </figure>
+
+    <blockquote>
+      <p>"The confusion of time standards was the source of unceasing annoyance and trouble."</p>
+      <cite>New York Herald, 1883</cite>
+    </blockquote>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="railroads">
+    <span class="section-label">Part Two</span>
+    <h2>Iron Rails, Impossible Schedules</h2>
+
+    <div class="clearfix">
+      <figure class="img-float">
+        <img src="1890_Quincy_train_wreck.jpg" alt="Railroad Accident, 1880s" style="width:100%;display:block;">
+    </figure>
+
+    <p>It wasn't just a scheduling headache either. It was genuinely dangerous. In August 1853, two trains collided head-on near Providence, Rhode Island. Part of the reason was that the crews were working off different clocks. Fourteen people died. That kind of accident gave railroad executives a real reason to want a fix, beyond just keeping their timetables straight.</p>
+
+    <p>Congress wasn't going to help. They looked at proposals for national standard time in 1809, 1870, and 1872 and said no each time. Politicians didn't want to get involved in something that felt like telling people what time the sun was at. So it was left to the railroads to figure out on their own.</p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="solution">
+    <span class="section-label">Part Three</span>
+    <h2>William F. Allen and the Plan That Changed Everything</h2>
+
+    <div class="clearfix">
+      <figure class="img-float">
+        <img src="640px-WilliamFitchAllen.jpg" alt="Portrait of William F. Allen" style="width:100%;display:block;">
+      </figure>
+
+      <p>People had been trying to solve this for a while. A schoolmaster named Charles F. Dowd proposed a national time-zone system back in 1863. Nobody listened. Scientists like Cleveland Abbe and Canadian engineer Sandford Fleming made similar arguments through the 1870s. None of it went anywhere.</p>
+
+      <p>The person who actually made it happen was <strong>William F. Allen</strong>, and what's interesting about him is that he wasn't a scientist or a government official. He ran a railroad scheduling guide called the <em>Traveler's Official Railway Guide</em> and served as secretary of the General Time Convention. He was basically a railroad industry insider, which is probably exactly why he was the one who could pull it off.</p>
+
+      <p>In 1881 the railroads asked Allen to come up with a real plan. He divided the U.S. and Canada into five zones: Intercolonial, Eastern, Central, Mountain, and Pacific. Each one was centered on a meridian 15 degrees of longitude apart, which works out to exactly one hour difference between zones. Importantly, he drew the boundaries to line up with real cities and station locations rather than just straight lines on a map, which made it actually workable.</p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3>Allen's Strategy</h3>
+        <p>Allen knew he needed buy-in before he could push the plan through. He gathered feedback from engineers and officials across the industry through his Railway Guide. He also pushed the railroads to move fast, warning that if they waited too long, the government might step in with something worse.</p>
+      </div>
+      <div>
+        <h3>The October Convention</h3>
+        <p>On October 11, 1883, railroad executives met at the Grand Pacific Hotel in Chicago. Allen presented the plan. They voted yes. The date was set: Sunday, November 18, 1883. At noon, a telegraph signal from the Naval Observatory in Washington would go out, and every railroad clock in the country would reset at the same moment.</p>
+      </div>
+    </div>
+
+    <svg class="zone-map" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Simplified map of the four U.S. time zones adopted in 1883">
+      <defs>
+        <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="700" height="320" fill="#1a0e00" rx="4"/>
+      <rect x="10"  y="30" width="163" height="240" fill="#5c1a0a" rx="2"/>
+      <rect x="173" y="30" width="163" height="240" fill="#7a3b10" rx="2"/>
+      <rect x="336" y="30" width="163" height="240" fill="#3d5a80" rx="2"/>
+      <rect x="499" y="30" width="191" height="240" fill="#2d6a4f" rx="2"/>
+      <rect x="10"  y="30" width="163" height="240" fill="url(#hatch)"/>
+      <rect x="173" y="30" width="163" height="240" fill="url(#hatch)"/>
+      <rect x="336" y="30" width="163" height="240" fill="url(#hatch)"/>
+      <rect x="499" y="30" width="191" height="240" fill="url(#hatch)"/>
+      <line x1="173" y1="30" x2="173" y2="270" stroke="#f5edd6" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="336" y1="30" x2="336" y2="270" stroke="#f5edd6" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="499" y1="30" x2="499" y2="270" stroke="#f5edd6" stroke-width="2" stroke-dasharray="6,4"/>
+      <text font-family="'Special Elite', monospace" font-size="15" fill="#f5edd6" text-anchor="middle" x="91"  y="140">EASTERN</text>
+      <text font-family="'Special Elite', monospace" font-size="15" fill="#f5edd6" text-anchor="middle" x="254" y="140">CENTRAL</text>
+      <text font-family="'Special Elite', monospace" font-size="15" fill="#f5edd6" text-anchor="middle" x="417" y="140">MOUNTAIN</text>
+      <text font-family="'Special Elite', monospace" font-size="15" fill="#f5edd6" text-anchor="middle" x="594" y="140">PACIFIC</text>
+      <text font-family="monospace" font-size="10" fill="rgba(245,237,214,0.5)" text-anchor="middle" x="91"  y="220">75th Meridian</text>
+      <text font-family="monospace" font-size="10" fill="rgba(245,237,214,0.5)" text-anchor="middle" x="254" y="220">90th Meridian</text>
+      <text font-family="monospace" font-size="10" fill="rgba(245,237,214,0.5)" text-anchor="middle" x="417" y="220">105th Meridian</text>
+      <text font-family="monospace" font-size="10" fill="rgba(245,237,214,0.5)" text-anchor="middle" x="594" y="220">120th Meridian</text>
+      <text x="350" y="18" font-family="'Special Elite', monospace" font-size="11" fill="#b8860b" text-anchor="middle" letter-spacing="3">THE FOUR RAILROAD TIME ZONES · ADOPTED NOVEMBER 18, 1883</text>
+      <rect x="2" y="2" width="696" height="316" fill="none" stroke="#b8860b" stroke-width="2" rx="4"/>
+    </svg>
+    <p style="text-align:center; font-family:'Special Elite',monospace; font-size:0.7rem; color:var(--smoke); margin-top:-20px; margin-bottom:30px;">The four standard time zones the railroads put in place in 1883. Each zone centered on a meridian set 15 degrees, or one hour, apart.</p>
+
+    <figure>
+      <img src="Grand_Central_Depot_(NYPL_b13476047-421000).jpg" alt="Grand Central Depot Interior, c. 1880" style="width:100%;display:block;">
+      </figure>
+      <figure>
+        <img src="independaenceehall.jpg" alt="Independence Hall, Philadelphia, 1876" style="width:100%;display:block;">
+      </figure>
+    </div>
+
+    <div class="newspaper" data-source="Chicago Tribune, November 18, 1883">
+      <p>"At about a quarter to 12 o'clock, the great clock stopped... Nine minutes and thirty-two seconds later, it was reset to noon, as were clocks in other railroad stations and jewelers' shop windows. 'The general greeting on the street yesterday was, Have you the new time?'"</p>
+    </div>
+
+    <p>The "Day of Two Noons" name came from something genuinely weird that happened. In the eastern parts of each time zone, local solar noon arrived first, just like always. The bells rang, the clocks struck twelve. Then a few minutes later, the telegraph signal came in and the clocks had to be set back. Noon happened again. Some cities literally had noon twice in one day.</p>
+
+    <p>In New York, the bells at St. Paul's Chapel rang twelve times, then rang again about four minutes later. Pennsylvania Railroad workers swapped out signs that said "Philadelphia Time" for signs that said "Standard Time." The New York Central had already reset its clocks earlier that morning to get ahead of any confusion.</p>
+
+    <div class="newspaper" data-source="New York Times, November 18, 1883">
+      <p>"Petersburg, Va., Nov. 18. At noon today the city clock and the time pieces in different railroad offices here were set by the standard time received from Washington. Hereafter all trains from this city will run by the standard time, under the new schedule."</p>
+    </div>
+
+    <blockquote>
+      <p>"The Sun will be requested to rise and set by railroad time. People will have to marry by railroad time, and die by railroad time. Ministers will have to preach by railroad time; banks will open and close by railroad time."</p>
+      <cite>The Indianapolis Sentinel, November 17, 1883</cite>
+    </blockquote>
+
+    <p>There was one awkward moment. Attorney General Benjamin Brewster said federal clocks couldn't be changed without an act of Congress. The superintendent of the Naval Observatory ignored him and synchronized the federal clocks anyway. The government ended up just going along with what the railroads had already done.</p>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="reaction">
+    <span class="section-label">Part Five</span>
+    <h2>A Nation Divided Over the Clock</h2>
+
+    <p>Not everyone was on board. Reaction to the new system was pretty mixed across the country, and it's interesting to look at who pushed back and why.</p>
+
+    <h3>Acceptance: The Practical Majority</h3>
+    <p>Most people in railroad towns just went along with it. The railroads were too important to their daily lives to fight over a clock. Missing a train meant missing a market, losing a sale, or failing to get somewhere you needed to be. One shared clock was easier for everyone.</p>
+    <p>Jewelers were actually a big part of how this spread. They kept the official time in their shop windows, and people would come by to set their pocket watches. In Burlington, Iowa, local jewelers wrote to the Smithsonian to get the exact formula for Central Standard Time, then published it in the newspaper so the whole town could adjust.</p>
+
+    <figure>
+      <img src="jewlerly.jpeg" alt="Jeweler Shop, Detroit, c. 1880" style="width:100%;display:block;">
+    </figure>
+
+    <h3>Resistance: "Contrary to Nature"</h3>
+    <p>Others were angry. Some people said they were being "robbed of their daylight," which is a pretty reasonable way to feel when a private company decides to move your noon. Nobody had asked them. There was no vote. Railroad executives in distant cities had just decided what time it was going to be in your town.</p>
+    <p>Detroit refused to go along until 1900, which created 17 years of confusion for anyone crossing between Detroit and Windsor, Ontario. A lot of smaller towns kept two times going at once: "railroad time" at the depot and "God's time" everywhere else. It took years for things to fully settle.</p>
+
+    <div class="callout">
+      <span class="callout-label">Did You Know?</span>
+      <p>Indianapolis fought the change hard enough that its daily Sentinel argued in print, the night before the switch, that citizens would have to "eat, sleep, work, and marry by railroad time." The point was clear: private companies were overriding the natural order, and nobody had voted for it.</p>
+      <p>Within a year of November 18, 1883, most American cities had adopted standard railroad time regardless.</p>
+    </div>
+
+    <h3>A Question of Power</h3>
+    <p>I think the resistance makes a lot of sense when you step back. This wasn't just about clocks. Railroad companies in the Gilded Age were some of the most powerful private institutions the country had ever seen. They already controlled transportation, prices, and trade routes. Now they were deciding what time it was. That's a lot of power for a private company to hold, and a lot of people noticed.</p>
+    <p>The "Day of Two Noons" is really a story about who gets to decide how everyday life is organized, and what happens when the answer is a corporation instead of a government or a community.</p>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section id="legacy">
+    <span class="section-label">Part Six</span>
+    <h2>From Railroad Time to Federal Law, and the World</h2>
+
+    <p>The pushback didn't last long. Standard time was just too useful. Businesses, schools, and governments all fell in line within a few years. The old system of hundreds of local times faded out, and most people stopped thinking about it.</p>
+
+    <p>The federal government, which had done nothing to create any of this, finally got around to making it official law in 1918 with the <strong>Standard Time Act</strong>. That's 35 years after the railroads had already solved the problem on their own. The same act introduced Daylight Saving Time, which turned out to be incredibly controversial. Congress repealed it the very next year, though it kept coming back in different forms throughout the 20th century.</p>
+
+    <div class="img-pair">
+      <figure>
+        <img src="Royal-Observatory-Greenwich-Meridian-Building-630x246.jpg" alt="Royal Observatory, Greenwich, England" style="width:100%;display:block;">
+      </figure>
+      <figure>
+        <img src="standard-time-zone-chart-of-world-1921.jpg" alt="World Standard Time Zones Map, 1924" style="width:100%;display:block;">
+      </figure>
+    </div>
+
+    <h3>It Went Global Too</h3>
+    <p>What's also interesting is that the same year, 1884, the International Meridian Conference met in Washington D.C. and established Greenwich, England as the global Prime Meridian. The 24-zone system that covers the whole world today uses the same basic logic the American railroads came up with for their four zones. Something that started as a scheduling fix for train companies ended up becoming the global standard for how every country on Earth keeps time.</p>
+
+    <div class="ornament">✦ ✦ ✦</div>
+
+    <h3>Why This Still Matters</h3>
+    <p>Before 1883, time was something that belonged to your town and the sun above it. After 1883, it belonged to a system. That shift is so complete today that it's hard to even imagine the alternative. Every synchronized schedule, every time zone on your phone, every international meeting that has to coordinate across countries all traces back to what a group of railroad executives voted on in a Chicago hotel in October 1883.</p>
+    <p>What I found most surprising researching this topic is that it wasn't the government or scientists who made this happen. It was a private industry solving its own problem, and the rest of the world just followed along.</p>
+
+    <blockquote>
+      <p>"Before 1883, time was local, personal, and connected to nature. Afterward, it became industrial, mechanical, and universal."</p>
+      <cite>Today in Railroad History</cite>
+    </blockquote>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <span class="section-label">Visual Timeline</span>
+    <h2>From Local Sun to Standard Clock</h2>
+    <p>The key events that transformed American timekeeping unfolded over two decades of railroad growth and government inaction.</p>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1853</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>A Deadly Collision</strong>
+          <p>Two trains collide head-on, partly because crews were working from different local times. Fourteen passengers die. The disaster makes the safety stakes of time confusion plain.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1862</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Pacific Railway Act</strong>
+          <p>Congress funds the transcontinental railroad. The resulting burst of rail mileage makes the time problem acute within two decades.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1863</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Dowd's Proposal</strong>
+          <p>Schoolmaster Charles F. Dowd publishes the first American proposal for a national railroad time zone system. No railroad adopts it.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1870s</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Congress Refuses to Act</strong>
+          <p>Congress reviews proposals for national standard time in 1870 and 1872 and rejects both. The problem stays with private industry.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1881</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Allen Commissioned</strong>
+          <p>The General Time Convention asks William F. Allen, editor of the <em>Traveler's Official Railway Guide</em>, to build a workable time-zone plan for the railroads.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">Oct. 1883</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Grand Pacific Hotel Convention</strong>
+          <p>Railroad executives vote at the General Time Convention in Chicago to adopt Allen's plan. They set November 18, 1883 as the date for the switch.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">Nov. 18, 1883</div>
+        <div class="timeline-dot gold"></div>
+        <div class="timeline-content">
+          <strong>The Day of Two Noons ★</strong>
+          <p>At noon, synchronized telegraph signals reset railroad clocks across the continent to four standard time zones: Eastern, Central, Mountain, and Pacific. Some cities experience noon twice.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1884</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>International Meridian Conference</strong>
+          <p>In Washington, D.C., an international conference names Greenwich as the global Prime Meridian, extending the same zone logic across the whole planet.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1900</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Detroit Finally Relents</strong>
+          <p>Detroit abandons local solar time and adopts standard time, 17 years after the railroads made the switch.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-year">1918</div>
+        <div class="timeline-dot gold"></div>
+        <div class="timeline-content">
+          <strong>Standard Time Act ★</strong>
+          <p>Congress writes railroad time zones into federal law, 35 years after the railroads acted on their own. The act also introduces Daylight Saving Time for the first time in U.S. history.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section id="sources">
+    <span class="section-label">Bibliography</span>
+    <h2>Academic and Primary Sources</h2>
+    <ol class="sources">
+      <li>Library of Congress, Business Reference Services. "The Day of Two Noons: This Month in Business History." <em>Library of Congress Research Guides</em>. <a href="https://guides.loc.gov/this-month-in-business-history/november/day-of-two-noons" target="_blank">guides.loc.gov</a></li>
+      <li>National Museum of American History, Smithsonian Institution. "Time Zones: Synchronizing." <em>On Time</em> exhibition. <a href="https://americanhistory.si.edu/ontime/synchronizing/zones.html" target="_blank">americanhistory.si.edu</a></li>
+      <li>Library of Congress Law Library. "Whose Time is it Anyway? A Brief History of Standardized Time Zones in the United States." <em>In Custodia Legis</em> blog, November 2024. <a href="https://blogs.loc.gov/law/2024/11/whose-time-is-it-anyway-a-brief-history-of-standardized-time-zones-in-the-united-states/" target="_blank">blogs.loc.gov</a></li>
+      <li>Bureau of Transportation Statistics, U.S. Department of Transportation. "History of Time Zones and Daylight Saving Time." <a href="https://www.bts.gov/explore-topics-and-geography/geography/geospatial-portal/history-time-zones-and-daylight-saving" target="_blank">bts.gov</a></li>
+      <li>Gordon, John Steele. "Standard Time: We All Live By What Happened on November 18, 1883." <em>American Heritage</em>, July/August 2001, pp. 22–23.</li>
+      <li><em>New York Times</em>. "Day of Two Noons" coverage (primary source), November 18, 1883. Reprinted at <a href="https://historymatters.gmu.edu/d/5748/" target="_blank">History Matters, George Mason University</a>.</li>
+      <li>Iowa PBS / Iowa Pathways. "What Time is It? Railroads Bring Standard Time." Adapted from Bonney, Margaret Atherton (ed.), <em>The Goldfinch</em>, vol. 5, no. 2, November 1983. <a href="https://www.iowapbs.org/iowapathways/mypath/2584/what-time-it-railroads-bring-standard-time" target="_blank">iowapbs.org</a></li>
+      <li><em>Trains</em> magazine. "How Railroads Standardized Time in the U.S." <a href="https://www.trains.com/trn/railroads/history/how-railroads-standardized-time-in-the-us/" target="_blank">trains.com</a></li>
+      <li>Ramirez, Ainissa. "What Happened the Day the U.S. Adopted Standardized Time Zones." <em>TIME</em>, November 18, 2019. <a href="https://time.com/5730146/standardized-time/" target="_blank">time.com</a></li>
+      <li>Union Pacific Railroad Museum. "Time is of the Essence… or the Railroad?" Curator's Corner. <a href="https://www.uprrmuseum.org/uprrm/exhibits/curators-corner/standard-time/index.htm" target="_blank">uprrmuseum.org</a></li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <div class="header-rule" style="margin-bottom:24px; max-width:300px; margin-left:auto; margin-right:auto;"></div>
+  <strong>The Birth of Time Zones in the United States, 1870s–1880s</strong><br><br>
+  A Digital Artifact &nbsp;·&nbsp; History 147 &nbsp;·&nbsp; Edmonds College<br>
+  All written content original. Images from public domain / Wikimedia Commons.<br>
+  Sources cited above. &nbsp;·&nbsp; Published in view-only mode.
+</footer>
+
+</body>
+</html>
